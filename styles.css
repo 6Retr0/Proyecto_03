@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primary-color: #f7f5e7;
+  --secondary-color: #d3bb9b;
+  --tertiary-color: #050404;
+  --highlight-color: #8340a1;
+}
+
+html {
+  scroll-padding-top: 160px
+}
+
+body {
+  background: var(--primary-color);
+}
+
+/* SECCION DEL ENCABEZADO */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: var(--secondary-color);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 50%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  animation: better-header linear both;
+  animation-timeline: scroll(body block);
+  animation-range: 0 300px;
+}
+
+header > img {
+  width: 70px;
+  height: 70px;
+  margin: 12px;
+}
+
+header > nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+}
+
+h1 {
+  text-align: center;
+  width: 12%;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  gap: 100px;
+  width: 100%;
+  margin-right: 10px;
+}
+
+a {
+  color: var(--tertiary-color);
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.fries_menu {
+  display: none;
+  width: 50px;
+  height: 50px;
+}
+
+/* SECCION DEL HERO */
+#hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 24px 0px;
+    min-height: 100svh;
+    width: auto;
+    
+}
+
+/* IZQUIERDA */
+.info {
+  align-self: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  height: auto;
+  width: 30%;
+  max-width: 405px;
+  min-width: 300px;
+}
+
+.info > h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.info > h2 > span {
+    color: var(--highlight-color);
+}
+
+.info > p {
+  text-align: right;
+  margin: 24px 0px;
+  font-weight: 450;
+}
+
+.info > div {
+  text-align: center;
+}
+
+.hero_btn {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  border: 3px solid var(--highlight-color);
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.hero_btn:hover {
+  color: var(--highlight-color);
+  background: var(--primary-color);
+}
+
+/* DERECHA */
+.hero_img {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 12px;
+    width: 60%;
+    min-width: 350px;
+}
+
+#hero_1, #hero_2 {
+  object-fit: cover;
+  border-radius: 20px;
+  max-height: 60%;
+  width: 60%;
+  max-width: 600px;
+  min-width: 400px;
+}
+
+#hero_2 {
+  align-self: flex-end;
+}
+
+/* SECCION GALERIA */
+.gallery_title, .gallery_content {
+  animation: gallery-reveal both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 40%;
+}
+
+.gallery_title {
+  margin: 20px 20px 0px 20px;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 400;
+  width: fit-content;
+  border-bottom: 2px solid gray;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style-type: none;
+  gap: 20px;
+}
+
+.gallery_content {
+  flex-basis: 400px;
+}
+
+.photo {
+  object-fit: cover;
+  border-radius: 20px;
+  width: 100%;
+  min-width: 500px;
+  min-height: 600px;
+  max-height: 600px;
+}
+
+footer {
+  background: var(--tertiary-color);
+  color: var(--secondary-color);
+  border-top: 5px solid var(--highlight-color);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h4 {
+  color: var(--primary-color);
+  width: fit-content;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--highlight-color);
+}
+
+footer > ul {
+  list-style: none;
+  width: 120px;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+footer > ul > li {
+  margin: 12px 0px;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width:1280px) {
+  .info {
+    width: 100%;
+    min-width: 800px;
+  }
+
+  .hero_img {
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+  }
+
+  #hero_1, #hero_2 {
+    max-width: 360px;
+    min-width: 0;
+  }
+
+  .gallery {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 850px) {
+  header > nav {
+    display: none;
+  }
+
+  .fries_menu {
+    display: block;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .info {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  #hero_1, #hero_2 {
+    max-width: 270px;
+  }
+
+  .photo {
+    min-width: 270px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .info {
+    min-width: 270px;
+    align-self: start;
+  }
+}
+
+/* ESTILOS SCROLLBAR */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--highlight-color);
+  border-radius: 10px;
+}
+
+
+/* ANIMACIONES */
+@keyframes better-header {
+  to {
+    background: color-mix(in srgb, var(--secondary-color) 80%, transparent);
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes gallery-reveal {
+
+  from {
+    opacity: 0;
+    translate: 0 200px;
+    scale: .5;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+  
+}
